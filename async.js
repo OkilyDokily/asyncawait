@@ -5,6 +5,7 @@ async function demo(){
 
   //in the meantime the third() function will run and print "second" to the console
   console.log("fourth");//this is the last bit of code on the page to run
+  
 }
 
 function third(){
