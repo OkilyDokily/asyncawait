@@ -1,13 +1,17 @@
 async function demo(){
-  await (new Promise(resolve => setTimeout(function(){console.log("second"); resolve()},1000)));
-  //now that the promise is constructed it will wait for it to be resolved in the meantime the first() function /////will run and print "first" to the console
-  console.log("third");
-  return 'x'
+  console.log("first") //code before an await is synchronous so it will run first
+  
+  await (new Promise(resolve=>{console.log("second"); resolve();})); //second because this promise is all synchronous code// if it were async then the 3rd funtion would be called first
+
+  //in the meantime the third() function will run and print "second" to the console
+  console.log("fourth");//this is the last bit of code on the page to run
 }
 
-function first(){
-  console.log("first");
+function third(){
+  console.log("third");// this will run before the demo code is finished
 }
 
 demo();//the async code is called first 
-first();// this is called second but prints before any console.log in demo() code.
+third();// this prints before the final console.log in demo() code.
+
+
