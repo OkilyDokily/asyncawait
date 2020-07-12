@@ -1,5 +1,5 @@
 async function demo2(){
-  console.log("async2.js file ------------------------------------");//this is the last bit of code on the page to run
+  console.log("async2.js file ------------------------------------");
   console.log("first") //code before an await is synchronous so it will run first
   await (new Promise(resolve=>{setTimeout(() => {console.log("third"); resolve();},0)})) //third because this promise has async code// if it were synchronous then this would be called right after first.
 
