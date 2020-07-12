@@ -3,7 +3,7 @@ async function demo(){
   
   await (new Promise(resolve=>{console.log("second"); resolve();})); //second because this promise is all synchronous code// if it were async then the 3rd funtion would be called first
 
-  //in the meantime the third() function will run and print "second" to the console
+  //in the meantime the third() function will run and print "third" to the console
   console.log("fourth");//this is the last bit of code on the page to run
   
 }
